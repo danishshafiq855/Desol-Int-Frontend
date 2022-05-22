@@ -12,10 +12,9 @@ function App() {
 	return (
     <Router>
 		<Switch>
-			{/* <Route exact path="/" component={Login}> */}
-				{/* <PrivateRoute exact path="/add-vehicle" component={AddVehicle} /> */}
-			{/* </Route> */}
-			<Route exact path="/" component={AddVehicle}/>
+			<Route exact path="/" component={Login}>
+				<PrivateRoute exact path="/add-vehicle" component={AddVehicle} />
+			</Route>
 		</Switch>
     </Router>
 	);

@@ -1,25 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.css";
+
+import { Switch, Route, BrowserRouter as Router } from "react-router-dom";
+import PrivateRoute from "./routes/PrivateRoutes";
+
+// components
+const Login = React.lazy(() => import("./components/Login"));
+const AddVehicle = React.lazy(() => import("./components/AddVehicle"));
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	return (
+    <Router>
+		<Switch>
+			{/* <Route exact path="/" component={Login}> */}
+				{/* <PrivateRoute exact path="/add-vehicle" component={AddVehicle} /> */}
+			{/* </Route> */}
+			<Route exact path="/" component={AddVehicle}/>
+		</Switch>
+    </Router>
+	);
 }
 
 export default App;
